@@ -1,0 +1,16 @@
+<!-- tempalates/index.html -->
+
+<form method="post">
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    placeholder="Enter username"
+  />
+  <button type="submit">Generate Temporary Password</button>
+</form>
+{% if temp_password %}
+<p>Your temporary password is {{ temp_password }}</p>
+{% endif %}
